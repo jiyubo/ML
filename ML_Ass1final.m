@@ -65,6 +65,10 @@ error(1) = costfunction(X1,Ytraining,theta1);
 erorcross(1) = costfunction(Xt1,Yt,theta1);
 figure(1)
 plot(1:iteration,Jvect) 
+xlabel('Number of iterations') 
+ylabel('Error') 
+title('Cost function')
+
 
 % Now evaluating HYP 2
 H22 = h2(1:12968,:);
@@ -75,6 +79,10 @@ error(2) = costfunction(h2(1:12968,:),Ytraining,thetah2) ;
 erorcross(2) = costfunction(h2(12968:17291,:),Yt,thetah2);
 figure(2)
 plot(1:iteration,Jvecth2) 
+xlabel('Number of iterations') 
+ylabel('Error') 
+title('Cost function')
+
 
 % Now evaluating HYP 3
 H33 = h3(1:12968,:);
@@ -85,6 +93,10 @@ error(3) = costfunction(H33,Ytraining,thetah3);
 erorcross(3) = costfunction(h3(12968:17291,:),Yt,thetah3);
 figure(3)
 plot(1:iteration,Jvecth3) 
+xlabel('Number of iterations') 
+ylabel('Error') 
+title('Cost function')
+
 
 % Now evaluating HYP 4
 H44 = h4(1:12968,:);
@@ -95,6 +107,10 @@ error(4) = costfunction(h4(1:12968,:),Ytraining,thetah4);
 erorcross(4) = costfunction(h4(12968:17291,:),Yt,thetah4);
 figure(4)
 plot(1:iteration,Jvecth4) 
+xlabel('Number of iterations') 
+ylabel('Error') 
+title('Cost function')
+
 
 % Now evaluating HYP 5
 H55 = h5(1:12968,:);
@@ -105,6 +121,10 @@ error(5) = costfunction(h5(1:12968,:),Ytraining,thetah5);
 erorcross(5) = costfunction(h5(12968:17291,:),Yt,thetah5);
 figure(5)
 plot(1:iteration,Jvecth5) 
+xlabel('Number of iterations') 
+ylabel('Error') 
+title('Cost function')
+
 
 error
 erorcross
@@ -115,6 +135,10 @@ scatter (1:1:5,error, 'r')
 hold on
 scatter (1:1:5,erorcross,'*')
 hold off
+legend('Training data','Cross Validation Cost')
+xlabel('Hypothesis Numbeer') 
+ylabel('Error') 
+title('Comparing Hypothesis')
 
 
 %from figure 5 we can conclude that the fifth hypothesis gave the best
